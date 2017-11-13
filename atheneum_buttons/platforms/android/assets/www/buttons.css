@@ -1,0 +1,29 @@
+ a.myButton {
+    position:relative;
+    left: 20%;
+    top:10%;
+    background-color: #19334d;
+    border-radius:8px;
+    text-align: center;
+    text-decoration: none;
+    margin: 20px 10px;   
+    font-size: 15px;
+    height: 70px;
+    width:70px;
+    background-color: #37474F; 
+    color: #FFD600;
+}
+
+
+div.container {
+    position: absolute;
+    width: 100%;
+}
+
+header{
+    padding: 2px;
+    color: #FFD600;
+    background-color: #37474F;
+    clear: left;
+    text-align: center;
+}

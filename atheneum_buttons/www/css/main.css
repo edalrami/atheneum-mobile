@@ -1,0 +1,150 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.mdl-layout .mdl-layout__drawer-button {
+  color: #FFD600;
+}
+
+.file_input_div {
+  margin: auto;
+  width: 250px;
+  height: 40px;
+}
+
+.mdl-card--horizontal {
+  flex-direction: column;
+  height: 1vh;
+  padding-left: 150px;
+  width: 100%;
+  .mdl-card__media {
+    left: 0;
+    position: absolute;
+    width: 150px;
+  }
+  .mdl-card__supporting-text {
+    flex: 1 1 auto;
+    width: auto;
+  }
+}
+.mdl-card + .mdl-card {
+  margin-top: 40px;
+}
+
+
+
+
+.file_input {
+  float: left;
+}
+
+#file_input_text_div {
+  width: 200px;
+  height: 100px;
+  overflow: auto;
+  margin-top: -8px;
+  margin-left: 5px;
+}
+
+#upload_desc {
+  height: 15px;
+}
+
+#upload_mdl_card {
+  overflow: auto;
+  height: 525px;
+  margin-top: 2px;
+}
+
+#upload_subject {
+  height: 170px;
+}
+
+.none {
+  display: none;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 350px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.hide-modal{
+    width: 200px;
+	position: absolute;
+	margin: 0 auto;
+	right: 0;
+	left: 0;
+    bottom: 20px;
+	z-index: 9999;
+}
+
+#tutorial_content{
+  margin: auto;
+  max-width: 800px;
+  padding: 30px;
+}
+
+#tutorial_content h1{
+  margin-top: 20px;
+}
+
+#tutorial_content p{
+  font-size: 24px;
+}
+
+#tutorial_content a{
+  color: #607d8b;
+  text-decoration: none;
+}
+
+#tutorial_content a:hover{
+  text-decoration: underline;
+}
+
+#page-content{
+ background-color: #f5f5f5; 
+}
+
+body{
+  background-color: #f5f5f5;
+}
+
+

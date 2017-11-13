@@ -1,1 +1,2 @@
-# atheneum-mobile
+# CMPS121
+Mobile version of atheneum

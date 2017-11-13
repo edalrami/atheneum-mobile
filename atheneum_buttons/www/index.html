@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="buttons.css">
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atheneum Filesharing</title>
+
+  <!-- Material Design Theming -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-yellow.min.css" />
+    
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+  <!-----REMODAL----- -->
+  <link rel="stylesheet" href="css/remodal.css">
+  <link rel="stylesheet" href="css/remodal-default-theme.css">
+  <script src="js/remodal.min.js"></script>
+   
+
+  <script>
+      // Initialize Firebase
+      var config = {
+          apiKey: "AIzaSyB-StGhM37us-nn-6X4GAcOk1gf7HfWQgc",
+          authDomain: "atheneum-91b27.firebaseap.com",
+          databaseURL: "https://atheneum-91b27.firebaseio.com",
+          projectId: "atheneum-91b27",
+          storageBucket: "atheneum-91b27.appspot.com",
+          messagingSenderId: "541428318220"
+      };
+      firebase.initializeApp(config);
+  </script>
+  
+    
+</head>
+<body>
+    
+    
+<!--------Modal Popup for Login---------->
+                <div class="remodal" data-remodal-id="modal">
+                    <button data-remodal-action="close" class="remodal-close"></button>
+                    
+                    <h1>Login</h1>
+                    <input type="text" id="login_email" placeholder="email"/><br/>
+                    <br>
+                    <input type="password" id="login_password" placeholder="password" /><br>
+                    <br>
+                    <p> Don't have an account? Click More Info</p>
+                    <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+                    <button id ="confirm_login"data-remodal-action="confirm" class="remodal-confirm">Login</button>
+                    <button id ="signup_redirect" data-remodal-action="confirm" class="remodal-signup">More Info</button>
+                </div>    
+    
+ <!--------Modal Popup for Signup---------->
+                <div class="remodal" data-remodal-id="modal2">
+                    <button data-remodal-action="close" class="remodal-close"></button>
+                    
+                    
+                    <h1>Create Account</h1>
+                    <div id="signUpWrapper">
+                    <p>To create your accout, please visit our site below on a computer, and follow the setup guide <br><a href="https://atheneum-app.herokuapp.com/">https://atheneum-app.herokuapp.com/</a>
+                    </p>
+                    </div>
+                    <br>
+                    <button data-remodal-action="cancel" class="remodal-cancel">Close</button>
+                </div>
+        
+    
+<div class = "container">
+    <header> 
+        <h2>
+        <span class="mdl-layout-title mdl-color-text--yellow-A700">Atheneum</span>
+        </h2>
+        <style type='text/css'>
+    .mdl-layout .mdl-layout__drawer-button {
+      color: #FFD600;
+    }
+        </style>
+      <!-- Add spacer, to align navigation to the right -->
+    </header>
+</div>
+    <div class="mdl-layout mdl-js-layout">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+    </div>
+    <!--Tiles located in the middle-->
+    
+        <a href="download.html#Literature" class="myButton myButton1">Literature</a>
+        <a href="download.html#History" class="myButton myButton2">History</a>
+        <a href="download.html#Chemistry" class ="myButton myButton3">Chemistry</a>
+        <a href="download.html#Music" class="myButton myButton4">Music</a>
+        <a href="download.html#Art" class="myButton myButton5">Art</a>
+        
+    
+
+
+  <div class="mdl-layout__drawer mdl-color-text--yellow-A700 mdl-color--blue-grey-800">
+    <nav class="mdl-navigation">
+        <a id = "login_button" class="mdl-navigation__link mdl-color-text--yellow-A700">Login</a>
+        <a class="mdl-navigation__link mdl-color-text--yellow-A700" href="upload.html">Upload</a>
+        <a class="mdl-navigation__link mdl-color-text--yellow-A700" href="download.html">Browse Files</a>
+        <a class="mdl-navigation__link mdl-color-text--yellow-A700" href="http://www.weekinethereum.com/">News</a>
+        <a class="mdl-navigation__link mdl-color-text--yellow-A700" href="https://www.coinbase.com/">Coinbase</a>
+        <a id = "sign_out" class="mdl-navigation__link mdl-color-text--yellow-A700" href="">Sign Out</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here --></div>
+
+  </main>
+</div>
+<script>
+    
+    
+            //Displays login popup if login is clicked
+            $("#login_button").click(function() {
+                var inst = $('[data-remodal-id=modal]').remodal();
+                inst.open();
+            })
+            
+            
+            //Logs a user in
+            $("#confirm_login").click(function(){
+                var email = $('#login_email').val();
+                var pass = $('#login_password').val();
+                firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error){
+                    var errorMessage = error.message;
+                    var errorCode = error.code;
+                });
+            });
+    
+    
+    
+    
+            //Displays create accout popup if sign up tab is clicked
+            $("#signup_button").click(function() {
+                var inst = $('[data-remodal-id=modal2]').remodal();
+                inst.open();
+            })
+    
+            //If signup button is clicked on the login popup, redirect to sign up popup
+            //to create account
+             $("#signup_redirect").click(function() {
+                var inst = $('[data-remodal-id=modal2]').remodal();
+                inst.open();
+            })
+            
+            
+            
+            //Signs a user out and redirects to home page
+            $("#sign_out").click(function() {
+              firebase.auth().signOut().then(function(){
+                    //signed out successful
+                    //$("main").html("Signed out");
+                    window.location = "";
+                }).catch(function(error){
+                    //something went wrong
+                    $("main").html("Not signed out");
+              //get the current user 
+              //sign them out from firebase
+                });
+          });
+    
+    
+    
+            //Checks if the given email is already a member
+            //of the user table, and if not, add them.
+            function check_account(email) {
+              var database = firebase.database();
+              var user = firebase.auth().currentUser;
+              found = false;
+              var db_ref = database.ref("users");
+              db_ref.once('value').then(function(snapshot) {
+                snapshot.forEach(function(child) {
+                  var child_key = child.key;
+                  var child_data = child.val();
+                  //check if current user exists in the user DB
+                  if(child_data.email == email) {
+                    //match was found, do nothing
+                    found = true;
+                  }
+                })
+                if(!found) {
+                  //add the user in the database
+                  var new_user_ref = db_ref.push();
+                  var wallet_addr = $('#wallet_addr').val();
+                  var wallet_pass = $('#wallet_pass').val();
+                  //Default DB entry
+                  new_user_ref.set({
+                      'email': email,
+                      'wallet_addr': wallet_addr,
+                      'wallet_pass': wallet_pass
+                  });
+                  database.ref()
+                }
+              })
+            }
+
+            firebase.auth().onAuthStateChanged(function(user) {
+                if (user) {
+                    // User is signed in.
+                    console.log("Signed In")
+                } else {
+                    // No user is signed in.
+                }
+            });
+</script>
+    
+</body>
+</html>

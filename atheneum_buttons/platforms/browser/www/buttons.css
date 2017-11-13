@@ -1,0 +1,65 @@
+ .myButton {
+    position: relative;
+    top: 8%;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: #FFD600;
+    font-size: 30px;
+}
+.myButton1 {
+    font-size: 30px;
+    line-height: 250px;
+    background-position: center;
+    background-image:url('https://i.ebayimg.com/images/g/l6IAAOxyUrZS64di/s-l400.jpg');
+    background-repeat:no-repeat;
+}
+
+.myButton2 {
+    font-size: 30px;
+    line-height: 250px;
+    background-position: center;
+    background-image:url('http://images.metmuseum.org/CRDImages/ap/web-large/DP215410.jpg');
+    background-repeat:no-repeat;
+}
+.myButton3 {
+    font-size: 30px;
+    line-height: 250px;
+    background-position: center;
+    background-image:url('https://people.ucsc.edu/~dkleinma/beakers.jpg');
+    background-repeat:no-repeat;
+}
+.myButton4 {
+    font-size: 30px;
+    line-height: 250px;
+    background-position: center;
+    background-image:url('https://people.ucsc.edu/~dkleinma/musicsheets.png');
+    background-repeat:no-repeat;
+}
+.myButton5 {
+    font-size: 30px;
+    line-height: 250px;
+    background-position: center;
+    background-image:url('https://people.ucsc.edu/~dkleinma/starrynight.jpg');
+    background-repeat:no-repeat;
+}
+
+
+
+div.container { 
+    background-color: #37474F;
+    position: absolute;
+    width: 100%;
+}
+
+header{
+    padding: 2px;
+    color: #FFD600;
+    background-color: #37474F;
+    clear: left;
+    text-align: center;
+}
